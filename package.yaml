@@ -16,6 +16,25 @@ ghc-options: -Wall
 dependencies:
   - base >= 4.7 && < 4.10
   - text
+  - aeson
+  - bytestring
+  - servant >= 0.9 && < 0.10
+  - servant-server >= 0.9 && < 0.10
+  - servant-client >= 0.9 && < 0.10
+  - servant-docs >= 0.9 && < 0.10
+  - servant-swagger >= 1 && < 2
+  - servant-swagger-ui >= 0.2 && < 0.3
+  - servant-JuicyPixels >= 0.3 && < 0.4
+  - servant-js >= 0.9 && < 0.10
+  - swagger2 >= 2 && < 3
+  - lackey >= 0.4 && < 0.5
+  - warp >= 3.2 && < 3.3
+  - wai
+  - JuicyPixels >= 3 && < 4
+  - lens >= 4 && < 5
+  - http-client >= 0.4 && < 0.5
+  - QuickCheck
+  - servant-mock
 
 default-extensions:
   - AutoDeriveTypeable
@@ -50,6 +69,8 @@ tests:
       - kievfprog
       - hspec > 2 && < 3
       - QuickCheck >= 2.8 && < 2.9
+      - servant
+      - servant-quickcheck
   doctest:
     main:            Doctest.hs
     source-dirs:     test
@@ -58,3 +79,9 @@ tests:
       - Glob >= 0.7 && < 0.8
       - yaml == 0.8.*
 
+executables:
+  promise:
+    main:            Main.hs
+    source-dirs:     exe
+    dependencies:
+      - kievfprog
